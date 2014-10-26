@@ -16,7 +16,6 @@ $.fn.divBattle = function(options){
   conv = $(settings.convergePoint);
   convc = $(settings.convergePoint).offset();
 
-  
   //variables 
   prepTime = 4;
   prepSpeed = 60;
