@@ -4,7 +4,10 @@ $.fn.divBattle = function(options){
   var settings = $.extend({
     battle1: '#battle1',
     battle2: '#battle2',
-    convergePoint: '#conv'
+    convergePoint: '#conv',
+    prepTime: 4,
+    prepSpeed: 60,
+    rushSpeed: 250
   },options);
 
   b1 = $(settings.battle1);
@@ -16,10 +19,9 @@ $.fn.divBattle = function(options){
   conv = $(settings.convergePoint);
   convc = $(settings.convergePoint).offset();
 
-  //variables 
-  prepTime = 4;
-  prepSpeed = 60;
-  rushSpeed = 250;
+  pTime = settings.prepTime;  //number of shake iterations
+  pSpeed = settings.prepSpeed;  //how quickly divs shake milliseconds
+  rSpeed = settings.rushSpeed;  //how quickly the divs rush toward each other milliseconds
 
   $(this).on('click', function(){
     addCss();
@@ -43,17 +45,17 @@ $.fn.divBattle = function(options){
   };
 
   prep = function(direction){
-    for (i=0;i<prepTime;i++) {
-      b1.animate({'left':5},prepSpeed);
-      b1.animate({'left':-10},prepSpeed);
-      b1.animate({'left':10},prepSpeed);
-      b1.animate({'left':-5},prepSpeed);
+    for (i=0;i<pTime;i++) {
+      b1.animate({'left':5},pSpeed);
+      b1.animate({'left':-10},pSpeed);
+      b1.animate({'left':10},pSpeed);
+      b1.animate({'left':-5},pSpeed);
     }
-    for (i=0;i<prepTime;i++) {
-      b2.animate({'left':-5},prepSpeed);
-      b2.animate({'left':10},prepSpeed);
-      b2.animate({'left':-10},prepSpeed);
-      b2.animate({'left':5},prepSpeed);
+    for (i=0;i<pTime;i++) {
+      b2.animate({'left':-5},pSpeed);
+      b2.animate({'left':10},pSpeed);
+      b2.animate({'left':-10},pSpeed);
+      b2.animate({'left':5},pSpeed);
     }
   };
 
@@ -75,10 +77,9 @@ $.fn.divBattle = function(options){
     var b2ym = convy - b2y;
     
     //Move divs to converge point and then back
-    b1.animate({'left': b1xm,'top':b1ym},rushSpeed);
-    b2.animate({'left': b2xm, 'top':b2ym},rushSpeed);
-
-    b1.animate({'left':0,'top':0},rushSpeed);
-    b2.animate({'left':0,'top':0},rushSpeed);
+    b1.animate({'left': b1xm,'top':b1ym},rSpeed);
+    b2.animate({'left': b2xm, 'top':b2ym},rSpeed);
+    b1.animate({'left':0,'top':0},rSpeed);
+    b2.animate({'left':0,'top':0},rSpeed);
   };
 };
