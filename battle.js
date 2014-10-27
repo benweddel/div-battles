@@ -4,7 +4,7 @@ $.fn.divBattle = function(options){
   var settings = $.extend({
     battle1: '#battle1',
     battle2: '#battle2',
-    convergePoint: '#conv',
+    converge: '#conv',
     prepTime: 4,
     prepSpeed: 60,
     rushSpeed: 250
@@ -16,8 +16,8 @@ $.fn.divBattle = function(options){
   b2 = $(settings.battle2);
   b2c = $(settings.battle2).offset();
   //Converge point for the 2 divs to clash
-  conv = $(settings.convergePoint);
-  convc = $(settings.convergePoint).offset();
+  conv = $(settings.converge);
+  convc = $(settings.converge).offset();
 
   pTime = settings.prepTime;  //number of shake iterations
   pSpeed = settings.prepSpeed;  //how quickly divs shake milliseconds
