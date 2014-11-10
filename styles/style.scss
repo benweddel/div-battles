@@ -1,0 +1,90 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,700);
+
+$baseFont: 'Lato', sans-serif;
+$fontSize: 1em;
+$fontWeight: 300;
+
+@import "starter";
+
+/*--- Page Layout ---*/
+
+body {
+  font-family: $baseFont;
+  font-weight: $fontWeight;
+  font-size: $fontSize*1.6;
+  background: whitesmoke;
+}
+
+h1,h2,h3,h4 {
+  font-weight: $fontWeight;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+header {
+  background: url("../images/calc2.jpg") no-repeat;
+  background-size: cover;
+  .hero {
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    h1 {
+      padding: 150px 0;
+      margin: 0;
+      text-align: center;
+      font-size: $fontSize*5.6;
+    }
+  }
+}
+
+h2, p {
+  text-align: center;
+}
+
+h2 {
+  margin-top: 40px;
+  font-size: $fontSize*2;
+}
+
+p {
+  width: 50%;
+  margin: 0 auto;
+  line-height: $fontSize*1.7;
+}
+
+.links {
+  margin: 50px 0 100px 0;
+  text-align: center;
+  a:first-of-type {
+    margin-right: 20px;
+  }
+
+}
+
+button {
+    border: 0 none;
+    border-radius: 2px;
+    width: 200px; /* auto */
+    background: #444;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial,sans-serif;
+    font-weight: bold;
+    line-height: 25px;
+    padding: 7px 10px;
+    transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    text-align: center;
+    &:hover {
+      background: #999;
+    }
+    &:active {
+      outline: none;
+    }
+}
