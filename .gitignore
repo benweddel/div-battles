@@ -1,3 +1,4 @@
 #OS Junk Files
 *.DS_Store
 *node_modules/
+*extra-images/
